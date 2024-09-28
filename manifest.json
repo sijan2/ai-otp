@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "otp",
+  "description": "An Ai based auto otp filler",
+  "background": {
+    "service_worker": "src/background.ts"
+  },
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "src/popup/index.html"
+  },
+  "icons": {
+    "16": "public/icon/icon_16.png",
+    "48": "public/icon/icon_48.png"
+  }
+}

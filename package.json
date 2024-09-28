@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@extension-create/develop": "^1.8.0",
+    "@types/chrome": "^0.0.269",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "extension": "latest",
+    "postcss": "^8.4.47",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.12",
+    "typescript": "5.3.3"
+  },
+  "scripts": {
+    "dev": "extension dev",
+    "start": "extension start",
+    "build": "extension build",
+    "style": "tailwindcss -i ../../packages/tailwind-config/globals.css -o ./public/output.css --watch"
+  },
+  "name": "otp",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
+}
