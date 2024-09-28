@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="subscribe()">Subscribe</button>
+
+    <script>
+    addEventListener('load', async()=> 
+{
+    let sw= await navigator.serviceWorker.register('./sw.js')
+console.log(sw)
+
+
+}, 
+
+async function subscribe() {
+    let sw= await navigator.serviceworker.ready;
+    let push = await sw.pushManger.subscribe({})
+}
+
+
+
+)
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
