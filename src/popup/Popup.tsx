@@ -8,7 +8,7 @@ const Popup: React.FC = () => {
   const [session, setSession] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
-  const [message, setMessage] = useState<string | null>(null) // New state variable for success messages
+  const [message, setMessage] = useState<string | null>(null)
   const [watchCreated, setWatchCreated] = useState<boolean>(false)
   const [watchResponse, setWatchResponse] = useState<WatchResponse | null>(null)
   const [showDebugInfo, setShowDebugInfo] = useState<boolean>(false)
