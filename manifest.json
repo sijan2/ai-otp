@@ -7,6 +7,11 @@
     "service_worker": "src/background.ts"
   },
   "host_permissions": ["<all_urls>"],
+  "permissions": ["identity", "tabs", "storage", "webRequest", "notifications"],
+  "oauth2": {
+    "client_id": "1059958615565-ss15fprcpcjlkb75nsbdv04t7ok3u9m0.apps.googleusercontent.com",
+    "scopes": ["https://mail.google.com/"]
+  },
   "action": {
     "default_popup": "src/popup/index.html"
   },
