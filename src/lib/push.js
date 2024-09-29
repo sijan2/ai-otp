@@ -1,6 +1,6 @@
-var push = require("web-push");
+const webpush = require("web-push");
 
-let vapidKeys = {
+const vapidKeys = {
   publicKey:
     BOqYY7CBQAYw15wK3IfQWm2NlLEjrJsZaVol9XIde4Am2QcmUJGtvDwp9wG -
     oGiVhW -
@@ -9,11 +9,18 @@ let vapidKeys = {
   privateKey: yNYVRDk2A5sR6XEddlaGkXLe - fBbeXsPgG6TCX7umD0,
 };
 
-push.setVapidDetails(
+webpush.setVapidDetails(
   "mailto:suyoscar@gmail.com",
   vapidKeys.publicKey,
   vapidKeys.privateKey
 );
 
-let subscription = {};
-push.sendNotification(subscription, "test message 123");
+const pushSubscription = {
+  endpoint: ".....",
+  keys: {
+    auth: ".....",
+    p256dh: ".....",
+  },
+};
+
+webpush.sendNotification(pushSubscription, "Your Push Payload Text");
