@@ -22,7 +22,7 @@
     }
   ],
   "icons": {
-    "16": "public/icon/icon_16.png",
-    "48": "public/icon/icon_48.png"
+    "16": "images/icon_16.png",
+    "48": "images/icon_48.png"
   }
 }
