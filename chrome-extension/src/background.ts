@@ -62,7 +62,7 @@ function connectWebSocket(): void {
   };
 
   let lastOTPTime = 0;
-  const OTP_THROTTLE_INTERVAL = 1000; // 4 seconds
+  const OTP_THROTTLE_INTERVAL = 1000; // 1 seconds
 
   socket.onmessage = async (event: MessageEvent): Promise<void> => {
     console.log('Received raw message:', event.data);

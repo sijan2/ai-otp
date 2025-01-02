@@ -2,14 +2,14 @@
   "manifest_version": 3,
   "version": "1.0",
   "name": "otp",
-  "description": "An Ai based auto otp filler",
+  "description": "An AI extension that helps you to autofill OTPs",
   "background": {
     "service_worker": "src/background.ts"
   },
   "host_permissions": ["<all_urls>"],
   "permissions": ["identity", "tabs", "storage", "webRequest", "notifications"],
   "oauth2": {
-    "client_id": "1059958615565-ss15fprcpcjlkb75nsbdv04t7ok3u9m0.apps.googleusercontent.com",
+    "client_id": "$EXTENSION_PUBLIC_API_KEY",
     "scopes": ["https://mail.google.com/"]
   },
   "action": {

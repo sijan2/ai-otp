@@ -1,0 +1,8 @@
+name = "oauth-backend"
+main = "src/index.ts"
+compatibility_date = "2024-12-30"
+
+[vars]
+CLIENT_ID = "your_client_id_here"
+CLIENT_SECRET = "your_client_secret_here"
+REDIRECT_URI = "your_redirect_uri_here"
