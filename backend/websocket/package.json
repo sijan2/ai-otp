@@ -1,0 +1,19 @@
+{
+  "name": "heroku-websocket-server",
+  "version": "1.0.0",
+  "description": "WebSocket server with webhook endpoint for Heroku",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bufferutil": "^4.0.8",
+    "express": "^4.19.2",
+    "utf-8-validate": "^5.0.10",
+    "ws": "^7.5.10"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
