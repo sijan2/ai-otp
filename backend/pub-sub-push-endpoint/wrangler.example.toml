@@ -1,0 +1,9 @@
+
+name = "pubsub-webhook"
+main = "src/index.ts"
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+
+#Replace your deploye herouku websocket url
+[vars]
+WEBSOCKET_SERVER_URL = "wss://.........................herokuapp.com/"
