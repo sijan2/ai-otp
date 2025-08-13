@@ -28,7 +28,7 @@ class OAuthManager {
 
   private storage: Storage
   private authInProgress: boolean = false
-  private authPromise: Promise<string> | null = null
+  private authPromise: Promise<string | null> | null = null
   private authSuccessCallbacks: AuthSuccessCallback[] = []
 
   constructor() {

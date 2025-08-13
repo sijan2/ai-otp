@@ -351,6 +351,13 @@ function establishWebSocketConnection(wsUrl: string, isReusingToken: boolean): v
     console.warn(`WebSocket disconnected. Code: ${event.code}, Reason: ${reason.substring(0,100)}`);
     socket = null; 
     isConnectWebSocketAttemptInProgress = false; // Connection attempt is over
+
+    // Ensure ping timer is cleared to avoid leaks and duplicate reconnects
+    if (pingIntervalId) {
+      clearInterval(pingIntervalId);
+      pingIntervalId = null;
+      console.log("[EstablishWS] Cleared ping interval on socket close.");
+    }
     
     if (intentionalDisconnect) {
       console.log("WebSocket closed intentionally (e.g., due to logout). No reconnection attempt.");

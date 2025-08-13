@@ -116,6 +116,7 @@ export class WebSocketHub extends DurableObject<Env> { // Env should be from typ
 
     // Store the connection (optional if only using getWebSockets)
     const sessionId = crypto.randomUUID();
+    this.sessions.set(sessionId, server);
 
     // Remove connection state logs unless needed for debugging sessions specifically
     // console.log(`[WebSocketHub:${effectiveUserId}] New WebSocket connection established: sessionId=${sessionId}`);

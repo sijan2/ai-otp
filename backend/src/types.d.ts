@@ -13,6 +13,9 @@ interface Env {
   GOOGLE_PUBSUB_JWT_AUDIENCE: string;
   WEBSOCKET_JWT_SECRET: string;
 
+  // Chrome Extension configuration
+  CHROME_EXTENSION_ID: string; // Used to validate redirectUrl origin for OAuth flow
+
   // Secrets (defined via wrangler secret put)
   GOOGLE_CLIENT_ID: string;
   GOOGLE_CLIENT_SECRET: string;

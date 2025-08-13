@@ -49,7 +49,26 @@ function getWebSocketHubStub(env: Env, userId: string): WebSocketHub {
 router.get('/auth/login', async (request: Request, env: Env): Promise<Response> => {
   try {
     const url = new URL(request.url);
-    const redirectUrl = url.searchParams.get('redirectUrl') || 'chrome-extension://your-extension-id/callback.html'; // Placeholder: Update with your actual extension ID
+    const redirectUrlParam = url.searchParams.get('redirectUrl');
+    if (!redirectUrlParam) {
+      return new Response('Missing redirectUrl parameter', { status: 400 });
+    }
+
+    let redirectUrl: string;
+    try {
+      const ru = new URL(redirectUrlParam);
+      const extId = env.CHROME_EXTENSION_ID;
+      const allowedHost = extId ? `${extId}.chromiumapp.org` : '';
+      const isAllowed = ru.protocol === 'https:' && ((allowedHost && ru.hostname === allowedHost) || (!allowedHost && /\.chromiumapp\.org$/i.test(ru.hostname)));
+      if (!isAllowed) {
+        return new Response('Invalid redirectUrl parameter', { status: 400 });
+      }
+      // Persist only origin to avoid path-based open redirects
+      redirectUrl = ru.origin;
+    } catch {
+      return new Response('Invalid redirectUrl parameter', { status: 400 });
+    }
+
     const { verifier, challenge } = await generatePKCE();
     const state = crypto.randomUUID();
     sessionStates.set(state, { codeVerifier: verifier, redirectUrl });

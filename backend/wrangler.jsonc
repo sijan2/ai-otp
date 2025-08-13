@@ -38,6 +38,6 @@
 		"enabled": true
 	},
 	"vars": {
-
+		"CHROME_EXTENSION_ID": "your-extension-id"
 	}
 }
